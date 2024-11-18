@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+.hero-section{
+    background-color: #3a396f;
+    height: 100vh;
+    
+}
+
+.main-container{
+    display: flex;
+    flex-direction:column;
+    gap: 50px;
+    text-align: center;
+    padding-top: 40px;
+    padding-top: 20px;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+}
+
+.main-input input{
+    width: 500px;
+    height: 40px;
+    padding-left: 5px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+.text-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.text-box h6{
+    font-size: 24px;
+    color: #fff;
+}
+
+.input-to-do{
+    width: 350px;
+    height: 200PX;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid rgb(254, 254, 254);
+    color: white;
+    text-align: left;
+    overflow-y: scroll;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.input-to-do li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 0;
+}
+
+.input-to-do li i{
+    cursor: pointer;
+}
+
+.input-to-do::-webkit-scrollbar{
+    display: none;
+}
+
+.input-doing{
+    width: 350px;
+    height: 200PX;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid rgb(254, 254, 254);
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    overflow-y: scroll;
+}
+
+
+.input-doing li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 0;
+}
+
+.input-doing li i{
+    cursor: pointer;
+}
+
+.input-doing::-webkit-scrollbar{
+    display: none;
+}
+
+.input-task-done{
+    width: 350px;
+    height: 200PX;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid rgb(254, 254, 254);
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    overflow-y: scroll;
+}
+
+.input-task-done li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 0;
+}
+
+.input-task-done li i{
+    cursor: pointer;
+}
+
+.input-task-done::-webkit-scrollbar{
+    display: none;
+}
+
+.text-box button{
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.10rem;
+    background-color: #7b2cbf;
+}
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>To-do-list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="hero-section">
+        <div class="main-container">
+        <div class="main-input">
+            <input class="input-container" type="text" id="text" placeholder="Ente Your Task" >
+        </div>
+            <div class="list-container">
+                <div class="text-box">
+                    <h6>To-do</h6>
+                    <div class="input-to-do">
+                        <ul class="to-do-ul" draggable="true"></ul>
+                    </div>
+                    <button id="to-do" onclick="addTask()">Add to-do</button>
+                </div>
+                <div class="text-box">
+                    <h6>Task in process</h6>
+                    <div class="input-doing">
+                        <ul class="doing-ul" draggable="true"></ul>
+                    </div>
+                    <button id="doing" onclick="submitDoing()">Doing</button>
+                </div>
+                <div class="text-box">
+                    <h6>Task Completed</h6>
+                    <div class="input-task-done">
+                        <ul class="Done-ul" draggable="true"></ul>
+                    </div>
+                    <button id="done" onclick="submitDone()">Task done</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/93ffe8d172.js" crossorigin="anonymous"></script>
+</body>
+</html>
