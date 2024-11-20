@@ -1,9 +1,10 @@
 let input = document.querySelector(".input-container");
+let drags = document.getElementsByClassName('drag');
 let todoList = document.querySelector(".to-do-ul");
 let doingLi = document.querySelector('.doing-ul');
 let doneLi = document.querySelector('.Done-ul');
 
-// Function to generate a random string (for task IDs)
+
 function randomString(length) {
     const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz'.split('');
     let str = '';
@@ -14,33 +15,63 @@ function randomString(length) {
 }
 
 
-function saveToLocalStorage(key, taskContent) {
-    let tasks = JSON.parse(localStorage.getItem(key)) || [];
-    tasks.push(taskContent);
-    localStorage.setItem(key, JSON.stringify(tasks));
+
+
+// Save task objects (ID and content) to localStorage
+function saveToLocalStorage(key, taskObject) {
+    let tasks = JSON.parse(localStorage.getItem(key)) || []; 
+    tasks.push(taskObject);  
+    localStorage.setItem(key, JSON.stringify(tasks)); 
 }
 
 
+// General function to add a task to any list (to-do, doing, done)
 function addTaskToList(list, taskContent, listKey) {
     if (taskContent.trim() === '') {
         alert('Please Enter a Task');
         return;
     }
 
-    let randomId = randomString(10);
+    let randomId = randomString(10);  // Generate random ID
+    
+    let taskObject = {
+        id: randomId,
+        content: taskContent
+    };
+    
     let newEle = document.createElement("li");
     newEle.id = randomId;
+    newEle.draggable = true;
     newEle.innerHTML = `${taskContent} <i class="fa-regular fa-trash-can"></i>`;
+    newEle.setAttribute("ondragstart", "drag(event)");
     list.appendChild(newEle);
+    
+    newEle.addEventListener('dragstart' , (e)=>{
+        console.log('drag start')
+        setTimeout(()=>{
+            e.target.classList.add('hide');
+        },0)
+        
+    });
+    newEle.addEventListener('dragend' , (e)=>{
+        console.log('drag end')
+        e.target.classname = 'newEle';
+        e.target.classList.remove('hide');
+    });
+
+    initDragHanders();
 
     
-    saveToLocalStorage(listKey, taskContent);
-
+    // Save task object (ID and content) to localStorage
+    saveToLocalStorage(listKey, taskObject);
     
+    // Event listener for the trash icon
     newEle.querySelector("i").addEventListener("click", function() {
         removeItem(newEle, listKey);
     });
 }
+
+
 
 document.querySelector('#to-do').addEventListener('click', function() {
     let taskContent = input.value.trim();
@@ -66,18 +97,61 @@ document.querySelector('#done').addEventListener('click', function() {
     }
 });
 
-// Function to display previous data from localStorage
+function initDragHanders() {
+    let drags = document.querySelectorAll('.drag'); 
+    for(ul of drags){
+        // console.log('ul',ul);
+        ul.addEventListener('dragover' , (e)=>{
+            e.preventDefault();
+            console.log('drag over has been triggered')
+        })
+
+        ul.addEventListener('dragenter' , (e)=>{
+            e.preventDefault();
+            console.log('drag enter has been triggered')
+        })
+
+        ul.addEventListener('dragleave' , ()=>{
+            console.log('drag leave has been triggered')
+        })
+
+        ul.addEventListener('drop' , (e)=>{
+            console.log('drop has been triggered')
+            e.target.append(newEle);
+        })
+
+    }
+}
+
 function displayPreviousData() {
-    
+
     ['to-do-data', 'input-doing', 'input-task-done'].forEach((key, index) => {
         const list = [todoList, doingLi, doneLi][index];
         const tasks = JSON.parse(localStorage.getItem(key)) || [];
         tasks.forEach(task => {
+            
             let newEle = document.createElement("li");
-            newEle.innerHTML = `${task} <i class="fa-regular fa-trash-can"></i>`;
+            newEle.id = task.id; 
+            newEle.draggable = true;
+            newEle.innerHTML = `${task.content} <i class="fa-regular fa-trash-can"></i>`;
+            newEle.setAttribute("ondragstart", "drag(event)");
             list.appendChild(newEle);
 
-            // Add event listener for trash icon
+
+            newEle.addEventListener('dragstart' , (e)=>{
+                console.log('drag start')
+                setTimeout(()=>{
+                    e.target.classname = 'hide'
+                },0)
+                
+            });
+            newEle.addEventListener('dragend' , (e)=>{
+                console.log('drag end')
+                e.target.classname = 'newEle';
+            });
+        
+
+            // Add event listener for the trash icon to remove the task
             newEle.querySelector("i").addEventListener("click", function() {
                 removeItem(newEle, key);
             });
@@ -86,16 +160,21 @@ function displayPreviousData() {
 }
 
 
+
 function removeItem(liElement, key) {
-    const taskText = liElement.textContent.trim();
-    let tasks = JSON.parse(localStorage.getItem(key)) || [];
-    const index = tasks.indexOf(taskText);
-    if (index > -1) {
-        tasks.splice(index, 1);
-        localStorage.setItem(key, JSON.stringify(tasks));
-    }
+    const taskId = liElement.id;  // Get the ID of the task element
+    let tasks = JSON.parse(localStorage.getItem(key)) || [];  // Get tasks from localStorage
+
+    // Filter out the task with the matching ID
+    tasks = tasks.filter(task => task.id !== taskId);
+    localStorage.setItem(key, JSON.stringify(tasks));
+
     liElement.remove();
 }
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
 
 
 input.addEventListener('keydown', function(event) {
@@ -109,7 +188,10 @@ input.addEventListener('keydown', function(event) {
 });
 
 
-window.onload = displayPreviousData;
+window.onload = function() {
+    displayPreviousData();
+    initDragHanders();
+}
 
 
 

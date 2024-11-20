@@ -1,33 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
-.hero-section{
+.hide{
+    display: none;
+}
+
+.hero-section {
     background-color: #3a396f;
     height: 100vh;
-    
 }
 
-.main-container{
+.main-container {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     gap: 50px;
     text-align: center;
     padding-top: 40px;
     padding-top: 20px;
 }
 
-.list-container{
+.list-container {
     display: flex;
     flex-direction: row;
     gap: 40px;
     justify-content: center;
 }
 
-.main-input input{
+.main-input input {
     width: 500px;
     height: 40px;
     padding-left: 5px;
@@ -35,21 +38,23 @@
     border: 1px solid grey;
 }
 
-.text-box{
+.text-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
 }
 
-.text-box h6{
+.text-box h6 {
     font-size: 24px;
     color: #fff;
 }
 
-.input-to-do{
+.input-to-do,
+.input-doing,
+.input-task-done {
     width: 350px;
-    height: 200PX;
+    height: 200px;
     border-radius: 10px;
     padding-left: 5px;
     border: 1px solid rgb(254, 254, 254);
@@ -60,76 +65,34 @@
     padding-top: 5px;
 }
 
-.input-to-do li{
+.input-to-do li,
+.input-doing li,
+.input-task-done li {
     display: flex;
     justify-content: space-between;
     padding: 5px 10px 5px 0;
+    cursor: grab;
 }
 
-.input-to-do li i{
+.input-to-do ul,
+.input-doing ul,
+.input-task-done ul{
+    height: 100%;
+}
+
+.input-to-do li i,
+.input-doing li i,
+.input-task-done li i {
     cursor: pointer;
 }
 
-.input-to-do::-webkit-scrollbar{
+.input-to-do::-webkit-scrollbar,
+.input-doing::-webkit-scrollbar,
+.input-task-done::-webkit-scrollbar {
     display: none;
 }
 
-.input-doing{
-    width: 350px;
-    height: 200PX;
-    border-radius: 10px;
-    padding-left: 5px;
-    border: 1px solid rgb(254, 254, 254);
-    color: white;
-    text-align: left;
-    padding-left: 10px;
-    padding-top: 5px;
-    overflow-y: scroll;
-}
-
-
-.input-doing li{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px 5px 0;
-}
-
-.input-doing li i{
-    cursor: pointer;
-}
-
-.input-doing::-webkit-scrollbar{
-    display: none;
-}
-
-.input-task-done{
-    width: 350px;
-    height: 200PX;
-    border-radius: 10px;
-    padding-left: 5px;
-    border: 1px solid rgb(254, 254, 254);
-    color: white;
-    text-align: left;
-    padding-left: 10px;
-    padding-top: 5px;
-    overflow-y: scroll;
-}
-
-.input-task-done li{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px 5px 0;
-}
-
-.input-task-done li i{
-    cursor: pointer;
-}
-
-.input-task-done::-webkit-scrollbar{
-    display: none;
-}
-
-.text-box button{
+.text-box button {
     width: 150px;
     height: 40px;
     border-radius: 8px;
@@ -141,3 +104,97 @@
     background-color: #7b2cbf;
 }
 
+/* Media Queries for Responsiveness */
+
+/* For devices with max-width of 768px (tablets and below) */
+@media (max-width: 768px) {
+    .main-container {
+        padding-top: 20px;
+    }
+
+    .main-input input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .list-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .text-box h6 {
+        font-size: 20px;
+    }
+
+    .input-to-do,
+    .input-doing,
+    .input-task-done {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .text-box button {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+/* For devices with max-width of 480px (smaller phones) */
+@media (max-width: 480px) {
+    .main-container {
+        padding-top: 10px;
+        gap: 30px;
+    }
+
+    .main-input input {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    .list-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .text-box h6 {
+        font-size: 18px;
+    }
+
+    .input-to-do,
+    .input-doing,
+    .input-task-done {
+        width: 90%;
+        max-width: 280px;
+        height: 180px;
+    }
+
+    .text-box button {
+        width: 110px;
+        height: 35px;
+    }
+}
+
+/* For devices with max-width of 320px (smallest phones) */
+@media (max-width: 320px) {
+    .main-input input {
+        width: 85%;
+        max-width: 250px;
+    }
+
+    .text-box h6 {
+        font-size: 16px;
+    }
+
+    .input-to-do,
+    .input-doing,
+    .input-task-done {
+        width: 85%;
+        max-width: 250px;
+        height: 160px;
+    }
+
+    .text-box button {
+        width: 100px;
+        height: 30px;
+    }
+}
