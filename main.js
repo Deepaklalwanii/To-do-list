@@ -71,8 +71,7 @@ function addTaskToList(list, taskContent, listKey) {
     });
 }
 
-
-
+git 
 document.querySelector('#to-do').addEventListener('click', function() {
     let taskContent = input.value.trim();
     if (taskContent !== '') {
