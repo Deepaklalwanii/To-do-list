@@ -108,6 +108,12 @@
 
 /* For devices with max-width of 768px (tablets and below) */
 @media (max-width: 768px) {
+
+    .hero-section {
+        background-color: #3a396f;
+        height: 100vh;
+    }
+
     .main-container {
         padding-top: 20px;
     }
@@ -141,6 +147,12 @@
 
 /* For devices with max-width of 480px (smaller phones) */
 @media (max-width: 480px) {
+
+    .hero-section {
+        background-color: #3a396f;
+        height: 100vh;
+    }
+
     .main-container {
         padding-top: 10px;
         gap: 30px;
@@ -176,6 +188,13 @@
 
 /* For devices with max-width of 320px (smallest phones) */
 @media (max-width: 320px) {
+
+
+    .hero-section {
+        background-color: #3a396f;
+        height: 100vh;
+    }
+
     .main-input input {
         width: 85%;
         max-width: 250px;
