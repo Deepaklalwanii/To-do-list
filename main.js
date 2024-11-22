@@ -150,6 +150,20 @@ function displayPreviousData() {
     });
 }
 
+// Function to remove a task when the trash icon is clicked
+function removeItem(taskElement, listKey) {
+    const taskId = taskElement.id;  // Get the task ID from the DOM element
+    let tasks = JSON.parse(localStorage.getItem(listKey)) || [];  // Get the list of tasks from localStorage
+    
+    // Filter out the task with the matching ID
+    tasks = tasks.filter(task => task.id !== taskId);
+    
+    // Update the list in localStorage after removal
+    localStorage.setItem(listKey, JSON.stringify(tasks));
+
+    // Remove the task element from the DOM
+    taskElement.remove();
+}
 
 
 // Remove item from the list and update localStorage
@@ -225,6 +239,9 @@ document.querySelector('#done').addEventListener('click', function() {
         input.value = '';
     }
 });
+
+
+
 
 window.onload = function() {
     displayPreviousData(); 
