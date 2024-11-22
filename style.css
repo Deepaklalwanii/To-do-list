@@ -9,9 +9,8 @@
     display: none;
 }
 
-.hero-section {
+body {
     background-color: #3a396f;
-    height: 100vh;
 }
 
 .main-container {

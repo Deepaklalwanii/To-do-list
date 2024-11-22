@@ -151,6 +151,7 @@ function displayPreviousData() {
 }
 
 
+
 // Remove item from the list and update localStorage
 function removeItemFromList(taskElement, listKey) {
     const taskId = taskElement.id;
