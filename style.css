@@ -1,266 +1,273 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
 }
 
 .hide{
-    display: none;
+display: none;
 }
 
 body {
-    /* background-color: #3a396f; */
-    background-image: url('images/1.png');
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
+/* background-color: #3a396f; */
+background-image: url('images/1.png');
+background-position: center;
+background-size: 100%;
+background-repeat: no-repeat;
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    text-align: center;
-    padding-top: 40px;
-    padding-top: 20px;
+display: flex;
+flex-direction: column;
+gap: 50px;
+text-align: center;
+padding-top: 40px;
+padding-top: 20px;
 }
 
 .list-container {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    justify-content: center;
+display: flex;
+flex-direction: row;
+gap: 40px;
+justify-content: center;
 }
 
 .main-input input {
-    width: 500px;
-    height: 40px;
-    padding-left: 5px;
-    border-radius: 10px;
-    border: 1px solid grey;
+width: 500px;
+height: 40px;
+padding-left: 5px;
+border-radius: 10px;
+border: 1px solid grey;
 }
 
 .text-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 60px;
 }
 
 .text-box h6 {
-    font-size: 24px;
-    color: #fff;
+font-size: 24px;
+color: #fff;
 }
 
 .input-to-do,
 .input-doing,
 .input-task-done {
-    width: 350px;
-    height: 200px;
-    border-radius: 10px;
-    padding-left: 5px;
-    border: 1px solid rgb(254, 254, 254);
-    color: white;
-    text-align: left;
-    overflow-y: scroll;
-    padding-left: 10px;
-    padding-top: 5px;
+width: 350px;
+height: 200px;
+border-radius: 10px;
+padding-left: 5px;
+border: 1px solid rgb(254, 254, 254);
+color: white;
+text-align: left;
+overflow-y: scroll;
+padding-left: 10px;
+padding-top: 5px;
 }
 
 .input-to-do li,
 .input-doing li,
 .input-task-done li {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px 5px 0;
-    cursor: grab;
+display: flex;
+justify-content: space-between;
+padding: 5px 10px 5px 0;
+cursor: grab;
 }
 
 .input-to-do ul,
 .input-doing ul,
 .input-task-done ul{
-    height: 100%;
+height: 100%;
 }
 
 .input-to-do li i,
 .input-doing li i,
 .input-task-done li i {
-    cursor: pointer;
+cursor: pointer;
 }
 
 .input-to-do::-webkit-scrollbar,
 .input-doing::-webkit-scrollbar,
 .input-task-done::-webkit-scrollbar {
-    display: none;
+display: none;
 }
 
 .text-box button {
-    width: 150px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid grey;
-    cursor: pointer;
-    color: white;
-    font-weight: 700;
-    letter-spacing: 0.10rem;
-    background-color: #7b2cbf;
+width: 150px;
+height: 40px;
+border-radius: 8px;
+border: 1px solid grey;
+cursor: pointer;
+color: white;
+font-weight: 700;
+letter-spacing: 0.10rem;
+background-color: #7b2cbf;
 }
 
 /* Media Queries for Responsiveness */
 
 @media (max-width: 1147px){
 
+
+.main-container {
+    padding-top: 20px;
+}
+
+.main-input input {
+    width: 100%;
+    max-width: 300px;
+}
+
+.list-container {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.text-box h6 {
+    font-size: 20px;
+}
+
+.input-to-do,
+.input-doing,
+.input-task-done {
+    /* width: 100%; */
+    max-width: 320px;
     
-    .main-container {
-        padding-top: 20px;
-    }
+}
 
-    .main-input input {
-        width: 100%;
-        max-width: 300px;
-    }
+.text-box{
+    gap: 40px;
+}
 
-    .list-container {
-        flex-direction: column;
-        gap: 20px;
-        padding-bottom: 20px;
-    }
-
-    .text-box h6 {
-        font-size: 20px;
-    }
-
-    .input-to-do,
-    .input-doing,
-    .input-task-done {
-        /* width: 100%; */
-        max-width: 320px;
-        
-    }
-
-    .text-box{
-        gap: 40px;
-    }
-
-    .text-box button {
-        width: 120px;
-        height: 35px;
-    }
+.text-box button {
+    width: 120px;
+    height: 35px;
+}
 }
 
 
 /* For devices with max-width of 768px (tablets and below) */
 @media (max-width: 768px) {
 
-    .main-container {
-        padding-top: 20px;
-    }
+.main-container {
+    padding-top: 20px;
+}
 
-    .main-input input {
-        width: 100%;
-        max-width: 300px;
-    }
+.main-input input {
+    width: 100%;
+    max-width: 300px;
+}
 
-    .list-container {
-        flex-direction: column;
-        gap: 20px;
-    }
+.list-container {
+    flex-direction: column;
+    gap: 20px;
+}
 
-    .text-box h6 {
-        font-size: 20px;
-    }
+.text-box h6 {
+    font-size: 20px;
+}
 
-    .input-to-do,
-    .input-doing,
-    .input-task-done {
-        width: 100%;
-        max-width: 320px;
-    }
+.input-to-do,
+.input-doing,
+.input-task-done {
+    width: 100%;
+    max-width: 320px;
+}
 
-    .text-box{
-        gap: 40px;
-    }
+.text-box{
+    gap: 40px;
+}
 
-    .text-box button {
-        width: 120px;
-        height: 35px;
-    }
+.text-box button {
+    width: 120px;
+    height: 35px;
+}
 }
 
 /* For devices with max-width of 480px (smaller phones) */
 @media (max-width: 480px) {
 
-    .main-container {
-        padding-top: 10px;
-        gap: 30px;
-    }
+body{
+    background-position: right;
+}
 
-    .main-input input {
-        width: 90%;
-        max-width: 280px;
-    }
+.main-container {
+    padding-top: 10px;
+    gap: 30px;
+}
 
-    .list-container {
-        flex-direction: column;
-        gap: 15px;
-        padding-bottom: 20px;
-    }
+.main-input input {
+    width: 90%;
+    max-width: 280px;
+}
 
-    .text-box h6 {
-        font-size: 18px;
-    }
+.list-container {
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+}
 
-    .input-to-do,
-    .input-doing,
-    .input-task-done {
-        width: 90%;
-        max-width: 280px;
-        height: 180px;
-    }
+.text-box h6 {
+    font-size: 18px;
+}
 
-    .text-box{
-        gap: 40px;
-    }
+.input-to-do,
+.input-doing,
+.input-task-done {
+    width: 90%;
+    max-width: 280px;
+    height: 180px;
+}
 
-    .text-box button {
-        width: 110px;
-        height: 35px;
-    }
+.text-box{
+    gap: 40px;
+}
+
+.text-box button {
+    width: 110px;
+    height: 35px;
+}
 }
 
 /* For devices with max-width of 320px (smallest phones) */
 @media (max-width: 320px) {
 
+body{
+    background-position: right;
+}
 
-    .hero-section {
-        background-color: #3a396f;
-        height: 100vh;
-    }
+.hero-section {
+    background-color: #3a396f;
+    height: 100vh;
+}
 
-    .main-input input {
-        width: 85%;
-        max-width: 250px;
-    }
+.main-input input {
+    width: 85%;
+    max-width: 250px;
+}
 
-    .text-box h6 {
-        font-size: 16px;
-    }
+.text-box h6 {
+    font-size: 16px;
+}
 
-    .input-to-do,
-    .input-doing,
-    .input-task-done {
-        width: 85%;
-        max-width: 250px;
-        height: 160px;
-    }
+.input-to-do,
+.input-doing,
+.input-task-done {
+    width: 85%;
+    max-width: 250px;
+    height: 160px;
+}
 
-    .text-box{
-        gap: 40px;
-    }
+.text-box{
+    gap: 40px;
+}
 
-    .text-box button {
-        width: 100px;
-        height: 30px;
-    }
+.text-box button {
+    width: 100px;
+    height: 30px;
+}
 }
