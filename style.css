@@ -13,7 +13,7 @@ body {
     /* background-color: #3a396f; */
     background-image: url('images/1.png');
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 
