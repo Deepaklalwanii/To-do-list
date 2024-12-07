@@ -111,6 +111,12 @@ background-color: #7b2cbf;
 
 @media (max-width: 1147px){
 
+body{
+    background-image: url(images/1.png);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 .main-container {
     padding-top: 20px;
@@ -153,6 +159,12 @@ background-color: #7b2cbf;
 /* For devices with max-width of 768px (tablets and below) */
 @media (max-width: 768px) {
 
+body{
+    background-image: url(images/1.png);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .main-container {
     padding-top: 20px;
 }
