@@ -191,9 +191,7 @@ background-color: #7b2cbf;
 /* For devices with max-width of 480px (smaller phones) */
 @media (max-width: 480px) {
 
-body{
-    background-position: right;
-}
+
 
 .main-container {
     padding-top: 10px;
@@ -236,9 +234,6 @@ body{
 /* For devices with max-width of 320px (smallest phones) */
 @media (max-width: 320px) {
 
-body{
-    background-position: right;
-}
 
 .hero-section {
     background-color: #3a396f;
