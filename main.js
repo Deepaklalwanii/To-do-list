@@ -51,8 +51,6 @@ function addTaskToList(list, taskContent, listKey) {
     newEle.addEventListener('dragend', (e) => {
         console.log('drag end');
         e.target.classList.remove('hide');
-
-        // Instead of removing the task immediately, let it be moved properly
     });
 
     initDragHandlers(); // Initialize the drag handlers (drop zones)
@@ -71,7 +69,7 @@ function initDragHandlers() {
     
     dropZones.forEach(ul => {
         ul.addEventListener('dragover', (e) => {
-            e.preventDefault(); // Allow drop
+            e.preventDefault();
         });
 
         ul.addEventListener('dragenter', (e) => {
@@ -152,16 +150,10 @@ function displayPreviousData() {
 
 // Function to remove a task when the trash icon is clicked
 function removeItem(taskElement, listKey) {
-    const taskId = taskElement.id;  // Get the task ID from the DOM element
-    let tasks = JSON.parse(localStorage.getItem(listKey)) || [];  // Get the list of tasks from localStorage
-    
-    // Filter out the task with the matching ID
+    const taskId = taskElement.id;
+    let tasks = JSON.parse(localStorage.getItem(listKey)) || []; 
     tasks = tasks.filter(task => task.id !== taskId);
-    
-    // Update the list in localStorage after removal
     localStorage.setItem(listKey, JSON.stringify(tasks));
-
-    // Remove the task element from the DOM
     taskElement.remove();
 }
 

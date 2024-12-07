@@ -10,7 +10,10 @@
 }
 
 body {
-    background-color: #3a396f;
+    /* background-color: #3a396f; */
+    background-image: url('images/1.png');
+    background-position: center;
+    background-size: cover;
 }
 
 .main-container {
@@ -105,13 +108,49 @@ body {
 
 /* Media Queries for Responsiveness */
 
+@media (max-width: 1147px){
+
+    
+    .main-container {
+        padding-top: 20px;
+    }
+
+    .main-input input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .list-container {
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .text-box h6 {
+        font-size: 20px;
+    }
+
+    .input-to-do,
+    .input-doing,
+    .input-task-done {
+        /* width: 100%; */
+        max-width: 320px;
+        
+    }
+
+    .text-box{
+        gap: 40px;
+    }
+
+    .text-box button {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+
 /* For devices with max-width of 768px (tablets and below) */
 @media (max-width: 768px) {
-
-    .hero-section {
-        background-color: #3a396f;
-        height: 100vh;
-    }
 
     .main-container {
         padding-top: 20px;
@@ -138,6 +177,10 @@ body {
         max-width: 320px;
     }
 
+    .text-box{
+        gap: 40px;
+    }
+
     .text-box button {
         width: 120px;
         height: 35px;
@@ -146,11 +189,6 @@ body {
 
 /* For devices with max-width of 480px (smaller phones) */
 @media (max-width: 480px) {
-
-    .hero-section {
-        background-color: #3a396f;
-        height: 100vh;
-    }
 
     .main-container {
         padding-top: 10px;
@@ -165,6 +203,7 @@ body {
     .list-container {
         flex-direction: column;
         gap: 15px;
+        padding-bottom: 20px;
     }
 
     .text-box h6 {
@@ -177,6 +216,10 @@ body {
         width: 90%;
         max-width: 280px;
         height: 180px;
+    }
+
+    .text-box{
+        gap: 40px;
     }
 
     .text-box button {
@@ -209,6 +252,10 @@ body {
         width: 85%;
         max-width: 250px;
         height: 160px;
+    }
+
+    .text-box{
+        gap: 40px;
     }
 
     .text-box button {
